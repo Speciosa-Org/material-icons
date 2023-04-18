@@ -36,10 +36,13 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
+    "make": "run-s clean gather-icons set:common convert-icons set:module build",
     "clean": "del icons svg dist",
     "gather-icons": "node bin/gather-icons.mjs",
     "convert-icons": "svg-to-ts-files --config etc/svg-to-ts/icons.js",
-    "icons": "run-s clean gather-icons convert-icons build"
+    "icons": "run-s clean gather-icons convert-icons build",
+    "set:common": "npm pkg set 'type=commonjs'",
+    "set:module": "npm pkg set 'type=module'"
   },
   "author": "Jonathan Garbee <jonathan@garbee.me>",
   "license": "Apache-2.0",

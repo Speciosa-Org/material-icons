@@ -26,12 +26,8 @@ jobs:
           scope: '@garbee'
       - name: Install Deps
         run: npm ci
-      - name: Set to CommonJS for build
-        run: npm pkg set 'type=commonjs'
-      - name: Build
-        run: npm run icons
-      - name: Set to module for deploy
-        run: npm pkg set 'type=module'
+      - name: Make icons
+        run: npm run make
       - name: Set version
         run: npm version --no-git-tag "$REF_NAME"
       - name: Publish
