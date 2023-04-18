@@ -4,33 +4,28 @@
   "description": "Material icons in SVG form for JavaScript projects",
   "files": [
     "icons",
-    "svg"
+    "svg",
+    "index.js",
   ],
   "main": "./index.js",
   "module": "./index.js",
   "exports": {
     ".": {
-      "types": "./index.d.ts",
       "default": "./index.js"
     },
     "./icons/filled": {
-      "types": "./icons/filled/icons.d.ts",
       "default": "./icons/filled/icons.js"
     },
     "./icons/outlined": {
-      "types": "./icons/outlined/icons.d.ts",
       "default": "./icons/outlined/icons.js"
     },
     "./icons/round": {
-      "types": "./icons/round/icons.d.ts",
       "default": "./icons/round/icons.js"
     },
     "./icons/sharp": {
-      "types": "./icons/sharp/icons.d.ts",
       "default": "./icons/sharp/icons.js"
     },
     "./icons/two-tone": {
-      "types": "./icons/two-tone/icons.d.ts",
       "default": "./icons/two-tone/icons.js"
     }
   },
