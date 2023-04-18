@@ -7,18 +7,46 @@
     "svg"
   ],
   "exports": {
-    ".": "./dist/index.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./icons/filled.js": {
+      "types": "./dist/icons/filled/icons.d.ts",
+      "default": "./dist/icons/filled/icons.js"
+    },
+    "./icons/outlined.js": {
+      "types": "./dist/icons/outlined/icons.d.ts",
+      "default": "./dist/icons/outlined/icons.js"
+    },
+    "./icons/round.js": {
+      "types": "./dist/icons/round/icons.d.ts",
+      "default": "./dist/icons/round/icons.js"
+    },
+    "./icons/sharp.js": {
+      "types": "./dist/icons/sharp/icons.d.ts",
+      "default": "./dist/icons/sharp/icons.js"
+    },
+    "./icons/two-tone.js": {
+      "types": "./dist/icons/two-tone/icons.d.ts",
+      "default": "./dist/icons/two-tone/icons.js"
+    }
   },
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "icons": "svg-to-ts-files --config etc/svg-to-ts/icons.js",
+    "clean": "del icons svg dist",
+    "gather-icons": "node bin/gather-icons.mjs",
+    "convert-icons": "svg-to-ts-files --config etc/svg-to-ts/icons.js",
+    "icons": "run-s clean gather-icons convert-icons build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jonathan Garbee <jonathan@garbee.me>",
   "license": "Apache-2.0",
   "devDependencies": {
+    "del-cli": "^5.0.0",
     "glob": "^10.1.0",
+    "npm-run-all": "^4.1.5",
     "svg-to-ts": "^10.0.0",
     "typescript": "^5.0.4"
   }

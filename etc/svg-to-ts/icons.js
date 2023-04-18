@@ -21,10 +21,7 @@ const iconStyles = [
   return {
     conversionType: 'files',
     srcFiles: [`${sourcePath}/**/*.svg`],
-    // We need a prefix since some names like "123" from material
-    // can't be declared as a JS variable. They need to start with
-    // a letter.
-    prefix: 'i',
+    prefix: '',
     generateType: true,
     delimiter: 'CAMEL',
     svgoConfig: {
@@ -43,7 +40,7 @@ const iconStyles = [
 iconStyles.push({
   conversionType: 'files',
   srcFiles: [`${sourcePath}/**/*.svg`],
-  prefix: 'i',
+  prefix: '',
   generateType: true,
   delimiter: 'CAMEL',
   barrelFileName: `icons`,
