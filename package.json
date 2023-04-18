@@ -12,23 +12,23 @@
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     },
-    "./icons/filled.js": {
+    "./icons/filled": {
       "types": "./dist/icons/filled/icons.d.ts",
       "default": "./dist/icons/filled/icons.js"
     },
-    "./icons/outlined.js": {
+    "./icons/outlined": {
       "types": "./dist/icons/outlined/icons.d.ts",
       "default": "./dist/icons/outlined/icons.js"
     },
-    "./icons/round.js": {
+    "./icons/round": {
       "types": "./dist/icons/round/icons.d.ts",
       "default": "./dist/icons/round/icons.js"
     },
-    "./icons/sharp.js": {
+    "./icons/sharp": {
       "types": "./dist/icons/sharp/icons.d.ts",
       "default": "./dist/icons/sharp/icons.js"
     },
-    "./icons/two-tone.js": {
+    "./icons/two-tone": {
       "types": "./dist/icons/two-tone/icons.d.ts",
       "default": "./dist/icons/two-tone/icons.js"
     }
