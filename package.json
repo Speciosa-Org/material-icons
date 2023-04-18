@@ -3,11 +3,15 @@
   "version": "0.0.0",
   "description": "Material icons in SVG form for JavaScript projects",
   "files": [
-    "icons",
+    "dist",
     "svg"
   ],
+  "exports": {
+    ".": "./dist/index.js"
+  },
   "type": "module",
   "scripts": {
+    "build": "tsc",
     "icons": "svg-to-ts-files --config etc/svg-to-ts/icons.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,6 +19,7 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "glob": "^10.1.0",
-    "svg-to-ts": "^10.0.0"
+    "svg-to-ts": "^10.0.0",
+    "typescript": "^5.0.4"
   }
 }

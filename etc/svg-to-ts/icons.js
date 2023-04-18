@@ -21,28 +21,32 @@ const iconStyles = [
   return {
     conversionType: 'files',
     srcFiles: [`${sourcePath}/**/*.svg`],
-    namePrefix: '',
+    // We need a prefix since some names like "123" from material
+    // can't be declared as a JS variable. They need to start with
+    // a letter.
+    prefix: 'i',
     generateType: true,
     delimiter: 'CAMEL',
     svgoConfig: {
       plugins: ['cleanupAttrs']
     },
+    barrelFileName: `icons`,
     compileSources: false,
     outputDirectory: `${outputPath}/${style}`,
     interfaceName: `Material${uppercaseStyle}Interface`,
     typeName: `Material${uppercaseStyle}`,
     modelFileName: `${style}-icon.model`,
     iconsFolderName: style,
-    barrelFileName: `${style}-icons`,
   };
 });
 
 iconStyles.push({
   conversionType: 'files',
   srcFiles: [`${sourcePath}/**/*.svg`],
-  namePrefix: '',
+  prefix: 'i',
   generateType: true,
   delimiter: 'CAMEL',
+  barrelFileName: `icons`,
   svgoConfig: {
     plugins: ['cleanupAttrs']
   },
@@ -52,7 +56,6 @@ iconStyles.push({
   typeName: `MaterialTwoTone`,
   modelFileName: `two-tone-icon.model`,
   iconsFolderName: 'two-tone',
-  barrelFileName: `two-tone-icons`,
 });
 
 module.exports = iconStyles;
