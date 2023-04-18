@@ -3,41 +3,41 @@
   "version": "0.0.0",
   "description": "Material icons in SVG form for JavaScript projects",
   "files": [
-    "dist",
+    "icons",
     "svg"
   ],
-  "main": "./dist/index.js",
+  "main": "./index.js",
+  "module": "./index.js",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "types": "./index.d.ts",
+      "default": "./index.js"
     },
     "./icons/filled": {
-      "types": "./dist/icons/filled/icons.d.ts",
-      "default": "./dist/icons/filled/icons.js"
+      "types": "./icons/filled/icons.d.ts",
+      "default": "./icons/filled/icons.js"
     },
     "./icons/outlined": {
-      "types": "./dist/icons/outlined/icons.d.ts",
-      "default": "./dist/icons/outlined/icons.js"
+      "types": "./icons/outlined/icons.d.ts",
+      "default": "./icons/outlined/icons.js"
     },
     "./icons/round": {
-      "types": "./dist/icons/round/icons.d.ts",
-      "default": "./dist/icons/round/icons.js"
+      "types": "./icons/round/icons.d.ts",
+      "default": "./icons/round/icons.js"
     },
     "./icons/sharp": {
-      "types": "./dist/icons/sharp/icons.d.ts",
-      "default": "./dist/icons/sharp/icons.js"
+      "types": "./icons/sharp/icons.d.ts",
+      "default": "./icons/sharp/icons.js"
     },
     "./icons/two-tone": {
-      "types": "./dist/icons/two-tone/icons.d.ts",
-      "default": "./dist/icons/two-tone/icons.js"
+      "types": "./icons/two-tone/icons.d.ts",
+      "default": "./icons/two-tone/icons.js"
     }
   },
   "type": "module",
   "scripts": {
-    "build": "tsc",
-    "make": "run-s clean gather-icons set:common convert-icons set:module build",
-    "clean": "del icons svg dist",
+    "make": "run-s clean gather-icons set:common convert-icons set:module",
+    "clean": "del icons svg",
     "gather-icons": "node bin/gather-icons.mjs",
     "convert-icons": "svg-to-ts-files --config etc/svg-to-ts/icons.js",
     "icons": "run-s clean gather-icons convert-icons build",
