@@ -1,4 +1,4 @@
-name: Update Icons
+name: Publish Release Package
 on:
   release:
     types:
@@ -6,7 +6,7 @@ on:
 
 
 jobs:
-  update:
+  publish:
     runs-on: ubuntu-latest
     permissions:
       contents: read
