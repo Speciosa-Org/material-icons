@@ -5,7 +5,7 @@
   "files": [
     "icons",
     "svg",
-    "index.js",
+    "index.js"
   ],
   "main": "./index.js",
   "module": "./index.js",
