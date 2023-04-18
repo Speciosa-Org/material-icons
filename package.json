@@ -38,8 +38,7 @@
     "clean": "del icons svg dist",
     "gather-icons": "node bin/gather-icons.mjs",
     "convert-icons": "svg-to-ts-files --config etc/svg-to-ts/icons.js",
-    "icons": "run-s clean gather-icons convert-icons build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "icons": "run-s clean gather-icons convert-icons build"
   },
   "author": "Jonathan Garbee <jonathan@garbee.me>",
   "license": "Apache-2.0",
