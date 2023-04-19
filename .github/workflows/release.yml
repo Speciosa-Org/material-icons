@@ -40,10 +40,12 @@ jobs:
           node-version-file: .nvmrc
           registry-url: 'https://registry.npmjs.org/'
           scope: '@garbee'
+      - name: Update NPM
+        run: npm install -g npm
       - name: Publish to NPM Registry
         env:
             NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish
+        run: npm publish --provenance --access public
 
 
 
