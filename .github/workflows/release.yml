@@ -1,9 +1,9 @@
 name: Publish Release Package
+
 on:
   release:
     types:
       - published
-
 
 jobs:
   publish:
@@ -30,10 +30,20 @@ jobs:
         run: npm run make
       - name: Set version
         run: npm version --no-git-tag "$REF_NAME"
-      - name: Publish
-        run: npm publish
+      - name: Publish to Github Packages
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm publish
+      - name: Setup Node for NPM Registry
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
+        with:
+          node-version-file: .nvmrc
+          registry-url: 'https://registry.npmjs.org/'
+          scope: '@garbee'
+      - name: Publish to NPM Registry
+        env:
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish
 
 
 
