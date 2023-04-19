@@ -5,13 +5,15 @@
   "files": [
     "icons",
     "svg",
-    "index.js"
+    "LICENSE",
+    "README.md",
+    "index.ts"
   ],
-  "main": "./index.js",
-  "module": "./index.js",
+  "main": "./index.ts",
+  "module": "./index.ts",
   "exports": {
     ".": {
-      "default": "./index.js"
+      "default": "./index.ts"
     },
     "./icons/filled": {
       "default": "./icons/filled/icons.js"
