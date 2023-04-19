@@ -16,17 +16,21 @@
     "./icons/filled": {
       "default": "./icons/filled/icons.js"
     },
-    "./icons/outlined": {
-      "default": "./icons/outlined/icons.js"
+    "./icons/outlined.js": {
+      "types": "./icons/outlined/icons.d.ts",
+      "default": "./icons/outlined/icons.mjs"
     },
-    "./icons/round": {
-      "default": "./icons/round/icons.js"
+    "./icons/round.js": {
+      "types": "./icons/round/icons.d.ts",
+      "default": "./icons/round/icons.mjs"
     },
-    "./icons/sharp": {
-      "default": "./icons/sharp/icons.js"
+    "./icons/sharp.js": {
+      "types": "./icons/sharp/icons.d.ts",
+      "default": "./icons/sharp/icons.mjs"
     },
-    "./icons/two-tone": {
-      "default": "./icons/two-tone/icons.js"
+    "./icons/two-tone.js": {
+      "types": "./icons/two-tone/icons.d.ts",
+      "default": "./icons/two-tone/icons.mjs"
     }
   },
   "type": "module",
@@ -35,7 +39,7 @@
     "clean": "del icons svg",
     "gather-icons": "node bin/gather-icons.mjs",
     "convert-icons": "svg-to-ts-files --config etc/svg-to-ts/icons.js",
-    "icons": "run-s clean gather-icons convert-icons build",
+    "icons": "run-s clean gather-icons convert-icons",
     "set:common": "npm pkg set 'type=commonjs'",
     "set:module": "npm pkg set 'type=module'"
   },

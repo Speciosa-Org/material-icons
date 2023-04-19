@@ -3,7 +3,8 @@
     "module": "ESNext",
     "outDir": "dist",
     "declarationMap": true,
-    "declaration": true
+    "declaration": true,
+    "moduleResolution": "node"
   },
   "files": [
     "index.ts"
