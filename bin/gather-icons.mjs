@@ -2,8 +2,7 @@
 import { resolve, dirname } from 'node:path';
 import { mkdir } from 'node:fs/promises';
 import {
-  copyFile,
-  constants as fsConstants,
+  rename,
 } from 'node:fs/promises';
 import { fileURLToPath } from 'url';
 import { glob } from 'glob';
@@ -131,9 +130,6 @@ for (const [path, store] of folderMap.entries()) {
     const outputPath = resolve(rootPath, 'svg', renameGroupMap.get(path), group, fileName);
 
     await mkdir(outputPath.replace(fileName, ''), { recursive: true });
-    // COPYFILE_EXCL to fail if the destination already exists.
-    // This is an early warning signal that something is conflicting
-    // and needs to be dealt with.
-    await copyFile(item, outputPath, fsConstants.COPYFILE_EXCL);
+    await rename(item, outputPath);
   }
 }
