@@ -7,7 +7,9 @@ on:
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
+    runs-on:
+      - self-hosted
+      - linux
     permissions:
       contents: read
       packages: write
@@ -15,16 +17,6 @@ jobs:
     env:
       REF_NAME: ${{ github.ref_name }}
     steps:
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@master
-        with:
-          root-reserve-mb: 512
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-docker-images: 'true'
-          remove-codeql: 'true'
       - name: Checkout
         uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
         with:
