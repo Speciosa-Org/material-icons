@@ -1,3 +1,4 @@
 [submodule "icons"]
 	path = upstream-icons
 	url = https://github.com/google/material-design-icons.git
+	shallow = true
