@@ -1,6 +1,6 @@
 {
   "name": "@garbee/material-icons",
-  "version": "0.0.0",
+  "version": "3.0.0",
   "description": "Material icons in SVG form for JavaScript projects",
   "files": [
     "icons",
@@ -11,31 +11,6 @@
   ],
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    ".": {
-      "default": "./index.ts"
-    },
-    "./icons/filled.js": {
-      "types": "./icons/filled/icons.d.ts",
-      "default": "./icons/filled/icons.mjs"
-    },
-    "./icons/outlined.js": {
-      "types": "./icons/outlined/icons.d.ts",
-      "default": "./icons/outlined/icons.mjs"
-    },
-    "./icons/round.js": {
-      "types": "./icons/round/icons.d.ts",
-      "default": "./icons/round/icons.mjs"
-    },
-    "./icons/sharp.js": {
-      "types": "./icons/sharp/icons.d.ts",
-      "default": "./icons/sharp/icons.mjs"
-    },
-    "./icons/two-tone.js": {
-      "types": "./icons/two-tone/icons.d.ts",
-      "default": "./icons/two-tone/icons.mjs"
-    }
-  },
   "type": "module",
   "scripts": {
     "make": "run-s clean gather-icons set:common convert-icons set:module",
@@ -57,6 +32,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Garbee/material-icons.git"
+    "url": "git+https://github.com/Garbee/material-icons.git"
   }
 }
