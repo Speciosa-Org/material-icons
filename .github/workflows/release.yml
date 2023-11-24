@@ -22,30 +22,19 @@ jobs:
         uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
         with:
           submodules: true
-      - uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
+      - name: Setup Node for NPM Registry
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
         with:
           node-version-file: .nvmrc
           cache: npm
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@garbee'
+          registry-url: 'https://registry.npmjs.org/'
+          scope: '@speciosa'
       - name: Install Deps
         run: npm ci
       - name: Make icons
         run: npm run make
       - name: Set version
         run: npm version --no-git-tag "$REF_NAME"
-      - name: Publish to Github Packages
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm publish
-      - name: Setup Node for NPM Registry
-        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
-        with:
-          node-version-file: .nvmrc
-          registry-url: 'https://registry.npmjs.org/'
-          scope: '@garbee'
-      - name: Update NPM
-        run: npm install -g npm
       - name: Publish to NPM Registry
         env:
             NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
