@@ -8,8 +8,7 @@ on:
 jobs:
   publish:
     runs-on:
-      - self-hosted
-      - linux
+      - icon-builder
     permissions:
       contents: read
       packages: write
