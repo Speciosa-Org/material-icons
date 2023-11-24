@@ -8,7 +8,9 @@ on:
 jobs:
   publish:
     runs-on:
-      - icon-builder
+      group: Icons
+      labels:
+        - icon-builder
     permissions:
       contents: read
       packages: write
