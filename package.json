@@ -1,6 +1,6 @@
 {
   "name": "@speciosa/material-icons",
-  "version": "3.0.0",
+  "version": "0.0.0",
   "description": "Material icons in SVG form for JavaScript projects",
   "files": [
     "icons",
@@ -32,6 +32,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Garbee/material-icons.git"
+    "url": "git+https://github.com/Speciosa-Org/material-icons"
   }
 }
